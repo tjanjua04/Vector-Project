@@ -23,16 +23,49 @@ public:
 template<typename T> class Inventory
 {
 public:
-// Write Your code
-  void displayItems()
+
+std::vector<Item<T>> items;
+
+void addNewItem(Item<T> &obj) 
+{
+  for(int i = 0; i < items.size(); i++)
   {
-  std::cout<<"-------Inventory-------"<<std::endl;
-  std::cout<<std::left<<std::setw(20)<<"Name"<<std::setw(15)<<"Expiration"<<std::setw(15)<<"Category"<<std::setw(10)<<"Quantity"<<std::endl;
-  for(int i=0; i<items.size();i++)
-  {
-    std::cout<<std::left << std::setw(20)<<items[i].name<<std::setw(15)<<items[i].expiration<<std::setw(15)<<items[i].quantity<<std::setw(15)<<items[i].category<<std::endl;
+    if (items[i].name == obj.name)
+    {
+      std::cout << "Item is already present in Inventory";
     }
+      else
+      {
+        items.pushback(obj);
+      }
   }
+}
+
+// increaseQuantity(itemname, quantity)
+// updateItem()
+// removeItem()
+// Total()
+// searchItem()
+
+  
+void displayItems()
+
+{
+
+  std::cout<<"-------Inventory-------"<<std::endl;
+  
+  std::cout << std::left << std::setw(20) << "Name" << std::setw(15) << "Expiration" << std::setw(15) << "Category" << std::setw(10) << "Quantity" << std::endl;
+  
+  for(int i=0; i<items.size();i++)
+  
+  {
+  
+    std::cout<<std::left << std::setw(20)<<items[i].name<<std::setw(15)<<items[i].expiration<<std::setw(15)<<items[i].quantity<<std::setw(15)<<items[i].category<<std::endl;
+    
+  }
+  
+}
+
 };
 
 template<typename T>class Appointment
@@ -57,6 +90,9 @@ template<typename T>class AppointmentSystem
 {
 public:
 // Write Your code
+// schedule()
+// Total_appointments()
+// removeRecent()
   void display()
   {
     std::cout<<"-------Appointments-------"<<std::endl;
@@ -69,13 +105,12 @@ public:
 };
 
 int main(){
-/* Remove comments and run following test cases
 Inventory<std::string> i1;
-Item<std::string> I1("Protien Bar","05/09/2023","Snacks",4);
+Item<std::string> I1("Protein Bar","05/09/2023","Snacks",4);
 i1.addNewItem(I1);
 Item<std::string> I2("Milk","05/12/2023","Regular",2);
 i1.addNewItem(I2);
-Item<std::string> I3("Cerels","09/12/2023","Snacks",5);
+Item<std::string> I3("Cereals","09/12/2023","Snacks",5);
 i1.addNewItem(I3);
 i1.displayItems();
 i1.updateItem("Milk","09/24/2023","Regular",3);
@@ -125,5 +160,5 @@ s1.Total_appointments("09/12/2023","12:00PM");
 Appointment<std::string> a5("Chris Lynn","09/12/2023","12:00PM","879455714");
 s1.schedule(a4);
 s1.removeRecent();
-s1.display();*/
+s1.display();
 }
