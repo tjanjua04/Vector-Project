@@ -44,7 +44,6 @@ public:
 			 if (items[i].name == itemname)
       { 
 		  	items[i].quantity += quantityadded;
-				return items[i].quantity;
 			}
 		}
         return 0;
