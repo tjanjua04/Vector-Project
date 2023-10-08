@@ -178,22 +178,19 @@ public:
     }
 };
 
-
-
 int main()
 {
-
 Inventory<std::string> i1;
-    Item<std::string> I1("Protien Bar", "05/09/2023", "Snacks", 4);
+    Item<std::string> I1("Protein Bar", "05/09/2023", "Snacks", 4);
     i1.addNewItem(I1);
     Item<std::string> I2("Milk", "05/12/2023", "Regular", 2);
     i1.addNewItem(I2);
-    Item<std::string> I3("Cerels","09/12/2023","Snacks",5);
+    Item<std::string> I3("Cereals","09/12/2023","Snacks",5);
     i1.addNewItem(I3);
     i1.displayItems();
     i1.updateItem("Milk", "09/24/2023", "Regular", 3);
     i1.displayItems();
-    i1.increaseQuantity("Cerels",10);
+    i1.increaseQuantity("Cereals",10);
     i1.displayItems();
     try{
     i1.updateItem("Bar","09/12/2023","Snacks",3);
@@ -202,7 +199,7 @@ Inventory<std::string> i1;
     std::cout << msg << std::endl;
     }
     i1.displayItems();
-    i1.updateItem("Cerels","09/27/2023","Regular",4);
+    i1.updateItem("Cereals","09/27/2023","Regular",4);
     i1.displayItems();
     i1.Total(); 
     try {
@@ -239,5 +236,4 @@ Inventory<std::string> i1;
     s1.schedule(a4);
     s1.removeRecent();
     s1.display();
-    
 }
